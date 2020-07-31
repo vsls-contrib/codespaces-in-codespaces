@@ -1,5 +1,5 @@
 # Codespace in Codespace
 
-## Recursion is near
+Minimal setup for initializing Codespaces Portal environment in a Github Codespace.
 
-Minimal setup for creating Codespaces Portal in a Github Codespace.
+*toward recursion* ♾️
