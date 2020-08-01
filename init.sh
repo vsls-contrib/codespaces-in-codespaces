@@ -118,5 +118,7 @@ git pull azdo master:master --force
 # go to `Website`
 cd $CSCLIENT
 
+bash exec
+
 # initialzie the codespace
 yarn setup:codespace
