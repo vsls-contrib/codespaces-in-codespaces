@@ -53,6 +53,8 @@ echo "
 WORKSPACE_ROOT='/root/workspace/codespaces-in-codespaces'
 # add color variables
 echo "
+# workspace
+export init-codespace-repo='bash ./init.sh'
 export CSCLIENT='$WORKSPACE_ROOT/src/Portal/PortalWebsite/Src/Website'
 export CSSERVER='$WORKSPACE_ROOT/src/services/containers/VsClk.Portal.WebSite'
 alias cdclient='cd \$CSCLIENT'
