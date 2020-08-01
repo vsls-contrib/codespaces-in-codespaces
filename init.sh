@@ -63,7 +63,7 @@ echo -e $PALETTE_GREEN"\n\n     🖖 👽  $GREETING, Codespacer 👽 🖖\n"$PA
 
 sleep 1s
 
-echo -e $PALETTE_LIGHT_YELLOW"\n\n     Lets setup the Git repo  \n"$PALETTE_RESET
+echo -e $PALETTE_LIGHT_YELLOW"\n 🏃Lets setup the Git repo"$PALETTE_RESET
 
 sleep 0.5s
 
@@ -108,28 +108,26 @@ git remote add azdo https://$AZ_DO_USERNAME:$AZ_DO_PAT@devdiv.visualstudio.com/O
 
 echo -e $PALETTE_LIGHT_YELLOW"\n ⌬ Fetching the repo\n"$PALETTE_RESET
 
-export VSCS_SETUP_PREVENT_WEBSITE_GREETING='true'
-
 git checkout -b inital-master
 git checkout master
 
 git pull azdo master:master --force
 
-function update_nuget_feed {
-    FEED_NAME=$1
-    dotnet nuget update source $2 -n $FEED_NAME -u "devdiv" -p "$AZ_DO_PAT" --store-password-in-clear-text
-}
+# function update_nuget_feed {
+#     FEED_NAME=$1
+#     dotnet nuget update source $2 -n $FEED_NAME -u "devdiv" -p "$AZ_DO_PAT" --store-password-in-clear-text
+# }
 
-update_nuget_feed "vssaas-sdk" "https://devdiv.pkgs.visualstudio.com/_packaging/vssaas-sdk/nuget/v3/index.json"
-update_nuget_feed "Cascade" "https://devdiv.pkgs.visualstudio.com/_packaging/Cascade/nuget/v3/index.json"
+# update_nuget_feed "vssaas-sdk" "https://devdiv.pkgs.visualstudio.com/_packaging/vssaas-sdk/nuget/v3/index.json"
+# update_nuget_feed "Cascade" "https://devdiv.pkgs.visualstudio.com/_packaging/Cascade/nuget/v3/index.json"
 
-# FEED_NAME="vssaas-sdk"
-# dotnet nuget remove source $FEED_NAME
-# dotnet nuget add source "https://devdiv.pkgs.visualstudio.com/_packaging/vssaas-sdk/nuget/v3/index.json" -n $FEED_NAME -u "devdiv" -p "$AZ_DO_PAT" --store-password-in-clear-text
+FEED_NAME="vssaas-sdk"
+dotnet nuget remove source $FEED_NAME
+dotnet nuget add source "https://devdiv.pkgs.visualstudio.com/_packaging/vssaas-sdk/nuget/v3/index.json" -n $FEED_NAME -u "devdiv" -p "$AZ_DO_PAT" --store-password-in-clear-text
 
-# FEED_NAME="Cascade"
-# dotnet nuget remove source $FEED_NAME
-# dotnet nuget add source "https://devdiv.pkgs.visualstudio.com/_packaging/Cascade/nuget/v3/index.json" -n $FEED_NAME -u "devdiv" -p "$AZ_DO_PAT" --store-password-in-clear-text
+FEED_NAME="Cascade"
+dotnet nuget remove source $FEED_NAME
+dotnet nuget add source "https://devdiv.pkgs.visualstudio.com/_packaging/Cascade/nuget/v3/index.json" -n $FEED_NAME -u "devdiv" -p "$AZ_DO_PAT" --store-password-in-clear-text
 
 # go to `Website`
 cd $CSCLIENT
