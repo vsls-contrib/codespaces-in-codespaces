@@ -60,7 +60,7 @@ alias cdserver='cd \$CSSERVER'
 #misc
 alias code='code-insiders'
 alias ls='ls --color=auto'
-alias ww='watch -n 1 "date && echo \ &&$1"'
+alias ww='watch -n 1 \"date && echo \ &&$1\"'
 alias do='dotnet$1'
 # git
 alias push='git push -u origin HEAD'
