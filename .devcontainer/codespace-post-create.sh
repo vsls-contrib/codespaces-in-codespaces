@@ -10,11 +10,6 @@ wget -c https://github.com/microsoft/artifacts-credprovider/releases/download/v0
 # add oh-my-bash
 wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O - | sh -C
 
-WORKSPACE_ROOT='/root/workspace/codespaces-in-codespaces'
-
-# add .bashrc config
-echo "export CSCLIENT='$WORKSPACE_ROOT/src/Portal/PortalWebsite/Src/Website'\nexport CSSERVER='$WORKSPACE_ROOT/src/services/containers/VsClk.Portal.WebSite'\nalias cdclient='cd \$CSCLIENT'\nalias cdserver='cd \$CSSERVER'\nalias code='code-insiders'\nalias ls='ls --color=auto'" >> ~/.bashrc
-
 # connect AzDO `npm` feeds
 echo "
 ; begin auth token
@@ -53,5 +48,66 @@ echo "
 //devdiv.pkgs.visualstudio.com/DevDiv/_packaging/playwright/npm/:email=npm requires email to be set but doesn't use the value
 ; end auth token
 " >> ~/.npmrc
+
+# add .bashrc config
+WORKSPACE_ROOT='/root/workspace/codespaces-in-codespaces'
+# add color variables
+echo "
+export CSCLIENT='$WORKSPACE_ROOT/src/Portal/PortalWebsite/Src/Website'
+export CSSERVER='$WORKSPACE_ROOT/src/services/containers/VsClk.Portal.WebSite'
+alias cdclient='cd \$CSCLIENT'
+alias cdserver='cd \$CSSERVER'
+#misc
+alias code='code-insiders'
+alias ls='ls --color=auto'
+alias ww='watch -n 1 "date && echo \ &&$1"'
+alias do='dotnet$1'
+# git
+alias push='git push -u origin HEAD'
+alias pull='git pull'
+alias fetch='git fetch origin'
+alias pullmaster='git pull origin master'
+alias devbranch='f() { git checkout master && git pull origin master && git checkout -b dev/$AZ_DO_USERNAME_INPUT/$1 };f'
+
+# Normal Text
+export PALETTE_RESET='\e[0m'
+
+# Dimmed text
+export PALETTE_DIM='\e[2m'
+
+# Bold Text
+export PALETTE_BOLD='\e[1m'
+
+# Underlined Text
+export PALETTE_UNDERLINED='\e[4m'
+
+# Blinking
+export PALETTE_BLINK='\e[5m'
+
+# Reverse
+export PALETTE_REVERSE='\e[7m'
+
+# Foreground Color
+export PALETTE_BLACK='\e[30m'
+export PALETTE_WHITE="\e[97m"
+export PALETTE_RED='\e[31m'
+export PALETTE_GREEN='\e[32m'
+export PALETTE_BROWN='\e[33m'
+export PALETTE_BLUE='\e[34m'
+export PALETTE_PURPLE='\e[35m'
+export PALETTE_CYAN='\e[36m'
+export PALETTE_LIGHTGRAY='\e[37m'
+export PALETTE_LIGHT_YELLOW="\e[93m"
+
+# Background Color
+export PALETTE_BLACK_U='\e[40m'
+export PALETTE_RED_U='\e[41m'
+export PALETTE_GREEN_U='\e[42m'
+export PALETTE_BROWN_U='\e[43m'
+export PALETTE_BLUE_U='\e[44m'
+export PALETTE_PURPLE_U='\e[45m'
+export PALETTE_CYAN_U='\e[46m'
+export PALETTE_LIGHTGRAY_U='\e[47m'
+" >> ~/.bashrc
 
 exec bash

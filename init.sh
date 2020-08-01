@@ -2,46 +2,6 @@
 
 clear
 
-# Normal Text
-export PALETTE_RESET='\e[0m'
-
-# Dimmed text
-export PALETTE_DIM='\e[2m'
-
-# Bold Text
-export PALETTE_BOLD='\e[1m'
-
-# Underlined Text
-export PALETTE_UNDERLINED='\e[4m'
-
-# Blinking
-export PALETTE_BLINK='\e[5m'
-
-# Reverse
-export PALETTE_REVERSE='\e[7m'
-
-# Foreground Color
-export PALETTE_BLACK='\e[30m'
-export PALETTE_WHITE="\e[97m"
-export PALETTE_RED='\e[31m'
-export PALETTE_GREEN='\e[32m'
-export PALETTE_BROWN='\e[33m'
-export PALETTE_BLUE='\e[34m'
-export PALETTE_PURPLE='\e[35m'
-export PALETTE_CYAN='\e[36m'
-export PALETTE_LIGHTGRAY='\e[37m'
-export PALETTE_LIGHT_YELLOW="\e[93m"
-
-# Background Color
-export PALETTE_BLACK_U='\e[40m'
-export PALETTE_RED_U='\e[41m'
-export PALETTE_GREEN_U='\e[42m'
-export PALETTE_BROWN_U='\e[43m'
-export PALETTE_BLUE_U='\e[44m'
-export PALETTE_PURPLE_U='\e[45m'
-export PALETTE_CYAN_U='\e[46m'
-export PALETTE_LIGHTGRAY_U='\e[47m'
-
 GREETINGS=("Bonjour" "Hello" "Salam" "Привет" "Вітаю" "Hola" "Zdravo" "Ciao" "Salut" "Hallo" "Nǐ hǎo" "Xin chào" "Yeoboseyo" "Aloha" "Namaskaram" "Wannakam" "Dzień dobry")
 GREETING=${GREETINGS[$RANDOM % ${#GREETINGS[@]} ]}
 
@@ -63,7 +23,7 @@ echo -e $PALETTE_GREEN"\n\n     🖖 👽  $GREETING, Codespacer 👽 🖖\n"$PA
 
 sleep 1s
 
-echo -e $PALETTE_LIGHT_YELLOW"\n 🏃Lets setup the Git repo"$PALETTE_RESET
+echo -e $PALETTE_LIGHT_YELLOW"\n🏃 Lets setup the Git repo"$PALETTE_RESET
 
 sleep 0.5s
 
@@ -73,7 +33,7 @@ read -p " ↳ Username: " AZ_DO_USERNAME_INPUT
 echo ""
 
 if [ -z ${AZ_DO_USERNAME_INPUT} ]; then
-    echo -e $PALETTE_RED"\n   🗿No name - no fame"$PALETTE_RESET
+    echo -e $PALETTE_RED"\n   🗿 No name - no fame"$PALETTE_RESET
     exit 1
 fi
 
@@ -92,7 +52,7 @@ stty $stty_orig
 echo ""
 
 if [ -z ${AZ_DO_PAT_INPUT} ]; then
-    echo -e $PALETTE_RED"\n   🐢No PAT - Zero FLOPS per watt"$PALETTE_RESET
+    echo -e $PALETTE_RED"\n   🐢 No PAT - Zero FLOPS per watt"$PALETTE_RESET
     exit 1
 fi
 
@@ -113,14 +73,6 @@ git checkout master
 
 git pull azdo master:master --force
 
-# function update_nuget_feed {
-#     FEED_NAME=$1
-#     dotnet nuget update source $2 -n $FEED_NAME -u "devdiv" -p "$AZ_DO_PAT" --store-password-in-clear-text
-# }
-
-# update_nuget_feed "vssaas-sdk" "https://devdiv.pkgs.visualstudio.com/_packaging/vssaas-sdk/nuget/v3/index.json"
-# update_nuget_feed "Cascade" "https://devdiv.pkgs.visualstudio.com/_packaging/Cascade/nuget/v3/index.json"
-
 FEED_NAME="vssaas-sdk"
 dotnet nuget remove source $FEED_NAME
 dotnet nuget add source "https://devdiv.pkgs.visualstudio.com/_packaging/vssaas-sdk/nuget/v3/index.json" -n $FEED_NAME -u "devdiv" -p "$AZ_DO_PAT" --store-password-in-clear-text
@@ -131,9 +83,7 @@ dotnet nuget add source "https://devdiv.pkgs.visualstudio.com/_packaging/Cascade
 
 # go to `Website`
 cd $CSCLIENT
-
 # to update the env variable that used in `.npmrc`
 bash exec
-
 # initialzie the codespace
 yarn setup:codespace
