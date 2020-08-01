@@ -51,7 +51,6 @@ echo "
 
 # add .bashrc config
 WORKSPACE_ROOT='/root/workspace/codespaces-in-codespaces'
-# add color variables
 echo "
 # workspace
 export codespaces:init='bash ./init.sh'
@@ -70,6 +69,8 @@ alias pull='git pull'
 alias fetch='git fetch origin'
 alias pullmaster='git pull origin master'
 alias devbranch='f() { git checkout master && git pull origin master && git checkout -b dev/$AZ_DO_USERNAME_INPUT/$1 };f'
+
+## Color variables
 
 # Normal Text
 export PALETTE_RESET='\e[0m'
