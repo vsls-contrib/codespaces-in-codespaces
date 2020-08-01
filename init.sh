@@ -83,7 +83,9 @@ dotnet nuget add source "https://devdiv.pkgs.visualstudio.com/_packaging/Cascade
 
 # go to `Website`
 cd $CSCLIENT
+
 # to update the env variable that used in `.npmrc`
 bash exec
+
 # initialzie the codespace
 yarn setup:codespace
