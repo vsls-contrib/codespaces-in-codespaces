@@ -29,7 +29,7 @@ sleep 0.25s
 
 echo -e $PALETTE_CYAN"\n- Please provide your AzDO username\n"$PALETTE_RESET
 
-read -p " ↳ Username: " AZ_DO_USERNAME_INPUT
+read -p " ↳ username: " AZ_DO_USERNAME_INPUT
 echo ""
 
 if [ -z ${AZ_DO_USERNAME_INPUT} ]; then
@@ -47,7 +47,7 @@ echo -e $PALETTE_CYAN"\n- Thanks, *$AZ_DO_USERNAME*! Please provide your AzDO PA
 
 stty_orig=$(stty -g)
 stty -echo
-read -p " ↳ PAT: " AZ_DO_PAT_INPUT
+read -p " ↳ PAT (code R/W + packaging R): " AZ_DO_PAT_INPUT
 stty $stty_orig
 echo ""
 
