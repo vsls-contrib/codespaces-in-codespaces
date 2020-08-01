@@ -115,9 +115,26 @@ git checkout master
 
 git pull azdo master:master --force
 
+function update_nuget_feed {
+    FEED_NAME=$1
+    dotnet nuget update source $2 -n $FEED_NAME -u "devdiv" -p "$AZ_DO_PAT" --store-password-in-clear-text
+}
+
+update_nuget_feed "vssaas-sdk" "https://devdiv.pkgs.visualstudio.com/_packaging/vssaas-sdk/nuget/v3/index.json"
+update_nuget_feed "Cascade" "https://devdiv.pkgs.visualstudio.com/_packaging/Cascade/nuget/v3/index.json"
+
+# FEED_NAME="vssaas-sdk"
+# dotnet nuget remove source $FEED_NAME
+# dotnet nuget add source "https://devdiv.pkgs.visualstudio.com/_packaging/vssaas-sdk/nuget/v3/index.json" -n $FEED_NAME -u "devdiv" -p "$AZ_DO_PAT" --store-password-in-clear-text
+
+# FEED_NAME="Cascade"
+# dotnet nuget remove source $FEED_NAME
+# dotnet nuget add source "https://devdiv.pkgs.visualstudio.com/_packaging/Cascade/nuget/v3/index.json" -n $FEED_NAME -u "devdiv" -p "$AZ_DO_PAT" --store-password-in-clear-text
+
 # go to `Website`
 cd $CSCLIENT
 
+# to update the env variable that used in `.npmrc`
 bash exec
 
 # initialzie the codespace
