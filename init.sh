@@ -97,11 +97,11 @@ if [ -z ${AZ_DO_PAT_INPUT} ]; then
 fi
 
 export AZ_DO_PAT=$AZ_DO_PAT_INPUT
-export AZ_DO_PATH_BASE64=$(echo -n $AZ_DO_PAT | base64)
+export AZ_DO_PAT_BASE64=$(echo -n $AZ_DO_PAT | base64)
 
 echo "
 export AZ_DO_PAT=$AZ_DO_PAT
-export AZ_DO_PATH_BASE64=$AZ_DO_PATH_BASE64
+export AZ_DO_PAT_BASE64=$AZ_DO_PAT_BASE64
 " >> ~/.bashrc
 
 git remote add azdo https://$AZ_DO_USERNAME:$AZ_DO_PAT@devdiv.visualstudio.com/OnlineServices/_git/codespaces-in-codespaces
@@ -120,5 +120,3 @@ cd $CSCLIENT
 
 # initialzie the codespace
 yarn setup:codespace
-
-

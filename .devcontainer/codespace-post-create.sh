@@ -15,4 +15,43 @@ WORKSPACE_ROOT='/root/workspace/codespaces-in-codespaces'
 # add .bashrc config
 echo "export CSCLIENT='$WORKSPACE_ROOT/src/Portal/PortalWebsite/Src/Website'\nexport CSSERVER='$WORKSPACE_ROOT/src/services/containers/VsClk.Portal.WebSite'\nalias cdclient='cd \$CSCLIENT'\nalias cdserver='cd \$CSSERVER'\nalias code='code-insiders'\nalias ls='ls --color=auto'" >> ~/.bashrc
 
+# connect AzDO `npm` feeds
+echo "
+; begin auth token
+//devdiv.pkgs.visualstudio.com/_packaging/VS/npm/registry/:username=devdiv
+//devdiv.pkgs.visualstudio.com/_packaging/VS/npm/registry/:_password=\$AZ_DO_PAT_BASE64
+//devdiv.pkgs.visualstudio.com/_packaging/VS/npm/registry/:email=npm requires email to be set but doesn't use the value
+//devdiv.pkgs.visualstudio.com/_packaging/VS/npm/:username=devdiv
+//devdiv.pkgs.visualstudio.com/_packaging/VS/npm/:_password=\$AZ_DO_PAT_BASE64
+//devdiv.pkgs.visualstudio.com/_packaging/VS/npm/:email=npm requires email to be set but doesn't use the value
+; end auth token
+
+; begin auth token
+//devdiv.pkgs.visualstudio.com/_packaging/NodeRepos/npm/registry/:username=devdiv
+//devdiv.pkgs.visualstudio.com/_packaging/NodeRepos/npm/registry/:_password=\$AZ_DO_PAT_BASE64
+//devdiv.pkgs.visualstudio.com/_packaging/NodeRepos/npm/registry/:email=npm requires email to be set but doesn't use the value
+//devdiv.pkgs.visualstudio.com/_packaging/NodeRepos/npm/:username=devdiv
+//devdiv.pkgs.visualstudio.com/_packaging/NodeRepos/npm/:_password=\$AZ_DO_PAT_BASE64
+//devdiv.pkgs.visualstudio.com/_packaging/NodeRepos/npm/:email=npm requires email to be set but doesn't use the value
+; end auth token
+
+; begin auth token
+//devdiv.pkgs.visualstudio.com/_packaging/Cascade/npm/registry/:username=devdiv
+//devdiv.pkgs.visualstudio.com/_packaging/Cascade/npm/registry/:_password=\$AZ_DO_PAT_BASE64
+//devdiv.pkgs.visualstudio.com/_packaging/Cascade/npm/registry/:email=npm requires email to be set but doesn't use the value
+//devdiv.pkgs.visualstudio.com/_packaging/Cascade/npm/:username=devdiv
+//devdiv.pkgs.visualstudio.com/_packaging/Cascade/npm/:_password=\$AZ_DO_PAT_BASE64
+//devdiv.pkgs.visualstudio.com/_packaging/Cascade/npm/:email=npm requires email to be set but doesn't use the value
+; end auth token
+
+; begin auth token
+//devdiv.pkgs.visualstudio.com/DevDiv/_packaging/playwright/npm/registry/:username=devdiv
+//devdiv.pkgs.visualstudio.com/DevDiv/_packaging/playwright/npm/registry/:_password=\$AZ_DO_PAT_BASE64
+//devdiv.pkgs.visualstudio.com/DevDiv/_packaging/playwright/npm/registry/:email=npm requires email to be set but doesn't use the value
+//devdiv.pkgs.visualstudio.com/DevDiv/_packaging/playwright/npm/:username=devdiv
+//devdiv.pkgs.visualstudio.com/DevDiv/_packaging/playwright/npm/:_password=\$AZ_DO_PAT_BASE64
+//devdiv.pkgs.visualstudio.com/DevDiv/_packaging/playwright/npm/:email=npm requires email to be set but doesn't use the value
+; end auth token
+" >> ~/.npmrc
+
 exec bash
