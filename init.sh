@@ -81,7 +81,7 @@ export AZ_DO_USERNAME=$AZ_DO_USERNAME_INPUT
 
 echo "
 export AZ_DO_USERNAME=$AZ_DO_USERNAME
-" >> ~/.npmrc
+" >> ~/.bashrc
 
 echo -e $PALETTE_CYAN"\n- Thanks, *$AZ_DO_USERNAME*! Please provide your AzDO PAT\n"$PALETTE_RESET
 
@@ -97,18 +97,21 @@ if [ -z ${AZ_DO_PAT_INPUT} ]; then
 fi
 
 export AZ_DO_PAT=$AZ_DO_PAT_INPUT
-export AZ_DO_PATH_BASE64=`echo '$AZ_DO_PAT' | base64`
+export AZ_DO_PATH_BASE64=$(echo -n $AZ_DO_PAT | base64)
 
 echo "
 export AZ_DO_PAT=$AZ_DO_PAT
-AZ_DO_PATH_BASE64=$AZ_DO_PATH_BASE64
-" >> ~/.npmrc
+export AZ_DO_PATH_BASE64=$AZ_DO_PATH_BASE64
+" >> ~/.bashrc
 
 git remote add azdo https://$AZ_DO_USERNAME:$AZ_DO_PAT@devdiv.visualstudio.com/OnlineServices/_git/codespaces-in-codespaces
 
 echo -e $PALETTE_LIGHT_YELLOW"\n ⌬ Fetching the repo\n"$PALETTE_RESET
 
 export VSCS_SETUP_PREVENT_WEBSITE_GREETING='true'
+
+git checkout -b inital-master
+git checkout master
 
 git pull azdo master:master --force
 
