@@ -23,7 +23,7 @@ echo -e $PALETTE_GREEN"\n\n     🖖 👽  $GREETING, Codespacer 👽 🖖\n"$PA
 
 sleep 1s
 
-echo -e $PALETTE_PURPLE"\n🏃 Lets setup the Git repo"$PALETTE_RESET
+echo -e $PALETTE_PURPLE"\n🏃 Lets setup the Codesace"$PALETTE_RESET
 
 sleep 0.25s
 
