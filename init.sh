@@ -65,7 +65,7 @@ sleep 1s
 
 echo -e $PALETTE_LIGHT_YELLOW"\n\n     Lets setup the Git repo  \n"$PALETTE_RESET
 
-sleep 1s
+sleep 0.5s
 
 echo -e $PALETTE_CYAN"\n- Please provide your AzDO username\n"$PALETTE_RESET
 
