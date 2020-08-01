@@ -47,7 +47,7 @@ echo -e $PALETTE_CYAN"\n- Thanks, *$AZ_DO_USERNAME*! Please provide your AzDO PA
 
 stty_orig=$(stty -g)
 stty -echo
-read -p " ↳ PAT (code R/W + packaging R): " AZ_DO_PAT_INPUT
+read -p " ↳ PAT ([code][R/W] + [packaging][R]): " AZ_DO_PAT_INPUT
 stty $stty_orig
 echo ""
 
