@@ -89,7 +89,7 @@ export PALETTE_REVERSE='\e[7m'
 
 # Foreground Color
 export PALETTE_BLACK='\e[30m'
-export PALETTE_WHITE="\e[97m"
+export PALETTE_WHITE='\e[97m'
 export PALETTE_RED='\e[31m'
 export PALETTE_GREEN='\e[32m'
 export PALETTE_BROWN='\e[33m'
@@ -97,7 +97,7 @@ export PALETTE_BLUE='\e[34m'
 export PALETTE_PURPLE='\e[35m'
 export PALETTE_CYAN='\e[36m'
 export PALETTE_LIGHTGRAY='\e[37m'
-export PALETTE_LIGHT_YELLOW="\e[93m"
+export PALETTE_LIGHT_YELLOW='\e[93m'
 
 # Background Color
 export PALETTE_BLACK_U='\e[40m'
