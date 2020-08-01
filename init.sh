@@ -23,9 +23,9 @@ echo -e $PALETTE_GREEN"\n\n     🖖 👽  $GREETING, Codespacer 👽 🖖\n"$PA
 
 sleep 1s
 
-echo -e $PALETTE_LIGHT_YELLOW"\n🏃 Lets setup the Git repo"$PALETTE_RESET
+echo -e $PALETTE_PURPLE"\n🏃 Lets setup the Git repo"$PALETTE_RESET
 
-sleep 0.5s
+sleep 0.25s
 
 echo -e $PALETTE_CYAN"\n- Please provide your AzDO username\n"$PALETTE_RESET
 

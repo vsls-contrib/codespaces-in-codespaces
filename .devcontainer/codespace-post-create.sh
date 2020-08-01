@@ -57,7 +57,7 @@ export CSCLIENT='$WORKSPACE_ROOT/src/Portal/PortalWebsite/Src/Website'
 export CSSERVER='$WORKSPACE_ROOT/src/services/containers/VsClk.Portal.WebSite'
 alias cdclient='cd \$CSCLIENT'
 alias cdserver='cd \$CSSERVER'
-alias codespaces:init='bash ./init.sh'
+alias codespaces:init='bash ./init.sh && cdclient'
 # misc
 alias code='code-insiders'
 alias ls='ls --color=auto'
