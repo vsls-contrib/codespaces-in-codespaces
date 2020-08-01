@@ -53,12 +53,12 @@ echo "
 WORKSPACE_ROOT='/root/workspace/codespaces-in-codespaces'
 echo "
 # workspace
-export codespaces:init='bash ./init.sh'
 export CSCLIENT='$WORKSPACE_ROOT/src/Portal/PortalWebsite/Src/Website'
 export CSSERVER='$WORKSPACE_ROOT/src/services/containers/VsClk.Portal.WebSite'
 alias cdclient='cd \$CSCLIENT'
 alias cdserver='cd \$CSSERVER'
-#misc
+alias codespaces:init='bash ./init.sh'
+# misc
 alias code='code-insiders'
 alias ls='ls --color=auto'
 alias ww='watch -n 1 \"date && echo \ &&$1\"'
