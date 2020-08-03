@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="126px" height="21px" viewBox="0 0 126 21" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M3,0 L22,0 L22,0 L22,21 L3,21 C1.34314575,21 2.02906125e-16,19.6568542 0,18 L0,3 C-2.02906125e-16,1.34314575 1.34314575,3.04359188e-16 3,0 Z" id="path-1"></path>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect stroke="#C6D1DD" x="0.5" y="0.5" width="125" height="20" rx="3"></rect>
+            <g id="nian-cat">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use fill="#D8D8D8" xlink:href="#path-1"></use>
+                <image id="Bitmap" mask="url(#mask-2)" x="0" y="0" width="22" height="21" xlink:href="https://octodex.github.com/images/nyantocat.gif"></image>
+            </g>
+            <text id="Codespace-ready" font-family="Helvetica" font-size="11" font-weight="normal" line-spacing="12" letter-spacing="0.2" fill="#24292E" text-decoration="inherit">
+                <tspan x="29" y="14" text-decoration="inherit">Codespace-ready</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
