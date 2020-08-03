@@ -69,9 +69,9 @@ git remote add azdo https://$AZ_DO_USERNAME:$AZ_DO_PAT@devdiv.visualstudio.com/O
 echo -e $PALETTE_LIGHT_YELLOW"\n ⌬ Fetching the repo\n"$PALETTE_RESET
 
 git reset --hard
-git branch --track old-main
+git branch --track github-main
 
-git pull azdo master:master --force
+git pull azdo master:main --force
 
 FEED_NAME="vssaas-sdk"
 dotnet nuget remove source $FEED_NAME
