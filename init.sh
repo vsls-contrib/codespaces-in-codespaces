@@ -70,6 +70,7 @@ echo -e $PALETTE_LIGHT_YELLOW"\n ⌬ Fetching the repo\n"$PALETTE_RESET
 
 git checkout -b old-master
 git branch --track origin/master
+git push -u origin master
 git checkout master
 
 git pull azdo master:master --force
