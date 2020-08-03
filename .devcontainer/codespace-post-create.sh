@@ -53,8 +53,8 @@ echo "
 echo "
 # workspace
 export CODESPACE_ROOT=$(pwd)
-export CSCLIENT=\$(find \$CODESPACE_ROOT -name \"Website\")
-export CSSERVER=\$(find \$CODESPACE_ROOT -name \"VsClk.Portal.WebSite\")
+export CSCLIENT=\"\$CODESPACE_ROOT/src/Portal/PortalWebsite/Src/Website\"
+export CSSERVER=\"\$CODESPACE_ROOT/src/services/containers/VsClk.Portal.WebSite\"
 alias cdroot='cd \$CODESPACE_ROOT'
 alias cdclient='cd \$CSCLIENT'
 alias cdserver='cd \$CSSERVER'
