@@ -70,7 +70,7 @@ alias push='git push -u origin HEAD'
 alias pull='git pull'
 alias fetch='git fetch origin'
 alias pullmaster='git pull origin master'
-alias branch='f() { git checkout master && git pull origin master && git checkout -b dev/$AZ_DO_USERNAME_INPUT/$1 };f'
+alias branch='f() { git checkout master && git pull origin master && git checkout -b dev/\$AZ_DO_USERNAME_INPUT/\$1 };f'
 
 ## Color variables
 
