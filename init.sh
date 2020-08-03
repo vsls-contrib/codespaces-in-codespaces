@@ -70,7 +70,6 @@ echo -e $PALETTE_LIGHT_YELLOW"\n ⌬ Fetching the repo\n"$PALETTE_RESET
 
 git reset --hard
 git branch --track github-main
-git config push.default upstream
 
 # clone the AzDO repo
 git pull azdo master:main --force
@@ -87,13 +86,8 @@ dotnet nuget add source "https://devdiv.pkgs.visualstudio.com/_packaging/Cascade
 # go to `Website`
 cd $CSCLIENT
 
-echo "--- 1"
+# pcik up variables in `./npmrc`
 bash exec
-echo "--- 2"
-
-exec bash
-
-echo "--- 3"
 
 # initialzie the codespace
 yarn setup:codespace
