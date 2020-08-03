@@ -88,4 +88,4 @@ cd $CSCLIENT
 # pick up variables in `./npmrc`
 exec
 # initialzie the codespace
-yarn setup:codespace
+yarn setup:codespace && refresh
