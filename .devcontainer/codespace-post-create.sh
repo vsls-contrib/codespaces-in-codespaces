@@ -115,5 +115,4 @@ export PALETTE_LIGHTGRAY_U='\e[47m'
 export PALETTE_RESET='\e[0m'
 " >> ~/.bashrc
 
-
 exec bash
