@@ -50,11 +50,11 @@ echo "
 " >> ~/.npmrc
 
 # add .bashrc config
-WORKSPACE_ROOT='/root/workspace/codespaces-in-codespaces'
 echo "
 # workspace
-export CSCLIENT='$WORKSPACE_ROOT/src/Portal/PortalWebsite/Src/Website'
-export CSSERVER='$WORKSPACE_ROOT/src/services/containers/VsClk.Portal.WebSite'
+export CODESPACE_ROOT=$pwd
+export CSCLIENT='$CODESPACE_ROOT/src/Portal/PortalWebsite/Src/Website'
+export CSSERVER='$CODESPACE_ROOT/src/services/containers/VsClk.Portal.WebSite'
 alias cdclient='cd \$CSCLIENT'
 alias cdserver='cd \$CSSERVER'
 alias codespaces:setup='bash ./init.sh && cdclient && exec bash'
@@ -68,12 +68,9 @@ alias push='git push -u origin HEAD'
 alias pull='git pull'
 alias fetch='git fetch origin'
 alias pullmaster='git pull origin master'
-alias devbranch='f() { git checkout master && git pull origin master && git checkout -b dev/$AZ_DO_USERNAME_INPUT/$1 };f'
+alias branch='f() { git checkout master && git pull origin master && git checkout -b dev/$AZ_DO_USERNAME_INPUT/$1 };f'
 
 ## Color variables
-
-# Normal Text
-export PALETTE_RESET='\e[0m'
 
 # Dimmed text
 export PALETTE_DIM='\e[2m'
@@ -111,6 +108,9 @@ export PALETTE_BLUE_U='\e[44m'
 export PALETTE_PURPLE_U='\e[45m'
 export PALETTE_CYAN_U='\e[46m'
 export PALETTE_LIGHTGRAY_U='\e[47m'
+
+# Normal Text
+export PALETTE_RESET='\e[0m'
 " >> ~/.bashrc
 
 exec bash
