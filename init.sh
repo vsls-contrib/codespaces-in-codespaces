@@ -68,8 +68,8 @@ git remote add azdo https://$AZ_DO_USERNAME:$AZ_DO_PAT@devdiv.visualstudio.com/O
 
 echo -e $PALETTE_LIGHT_YELLOW"\n ⌬ Fetching the repo\n"$PALETTE_RESET
 
+git reset --hard
 git checkout -b old-master
-git branch --track origin/master
 git push -u origin master
 git checkout master
 
