@@ -64,7 +64,7 @@ export AZ_DO_PAT=$AZ_DO_PAT
 export AZ_DO_PAT_BASE64=$AZ_DO_PAT_BASE64
 " >> ~/.bashrc
 
-git remote add azdo https://$AZ_DO_USERNAME:$AZ_DO_PAT@devdiv.visualstudio.com/OnlineServices/_git/codespaces-in-codespaces
+git remote add azdo https://$AZ_DO_USERNAME:$AZ_DO_PAT@devdiv.visualstudio.com/OnlineServices/_git/vsclk-core?version=GBdev%2Folsolomk%2Fportal-codespaces-in-codespaces
 
 echo -e $PALETTE_LIGHT_YELLOW"\n ⌬ Fetching the repo\n"$PALETTE_RESET
 
