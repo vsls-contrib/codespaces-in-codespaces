@@ -55,6 +55,7 @@ echo "
 export CODESPACE_ROOT=$(pwd)
 export CSCLIENT=\$(find \$CODESPACE_ROOT -name \"Website\")
 export CSSERVER=\$(find \$CODESPACE_ROOT -name \"VsClk.Portal.WebSite\")
+alias cdroot='cd \$CODESPACE_ROOT'
 alias cdclient='cd \$CSCLIENT'
 alias cdserver='cd \$CSSERVER'
 alias codespaces:setup='bash ./init.sh && cdclient && exec bash'

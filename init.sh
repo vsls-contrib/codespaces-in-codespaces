@@ -70,7 +70,7 @@ echo -e $PALETTE_LIGHT_YELLOW"\n ⌬ Fetching the repo\n"$PALETTE_RESET
 
 git reset --hard
 git checkout -b old-master
-git push -u origin master
+git branch --track origin/master
 git checkout master
 
 git pull azdo master:master --force
@@ -85,7 +85,7 @@ dotnet nuget add source "https://devdiv.pkgs.visualstudio.com/_packaging/Cascade
 
 # go to `Website`
 cd $CSCLIENT
-# to update the env variable that used in `.npmrc`
-bash exec
+# refresh vars in `~/.npmrc`
+refresh
 # initialzie the codespace
 yarn setup:codespace
