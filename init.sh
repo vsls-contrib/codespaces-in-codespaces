@@ -69,12 +69,13 @@ git remote add azdo https://$AZ_DO_USERNAME:$AZ_DO_PAT@devdiv.visualstudio.com/O
 echo -e $PALETTE_LIGHT_YELLOW"\n ⌬ Fetching the repo\n"$PALETTE_RESET
 
 git reset --hard
-git checkout -b github-main
-# git push -u origin github-main:main
-git checkout main
+git branch --track github-main
+git config push.default upstream
 
+# clone the AzDO repo
 git pull azdo master:main --force
 
+# setup NuGet feeds
 FEED_NAME="vssaas-sdk"
 dotnet nuget remove source $FEED_NAME
 dotnet nuget add source "https://devdiv.pkgs.visualstudio.com/_packaging/vssaas-sdk/nuget/v3/index.json" -n $FEED_NAME -u "devdiv" -p "$AZ_DO_PAT" --store-password-in-clear-text
@@ -86,7 +87,13 @@ dotnet nuget add source "https://devdiv.pkgs.visualstudio.com/_packaging/Cascade
 # go to `Website`
 cd $CSCLIENT
 
-exec
+echo "--- 1"
+bash exec
+echo "--- 2"
+
+exec bash
+
+echo "--- 3"
 
 # initialzie the codespace
 yarn setup:codespace
