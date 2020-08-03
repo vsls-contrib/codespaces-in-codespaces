@@ -52,7 +52,7 @@ echo "
 # add .bashrc config
 echo "
 # workspace
-export CODESPACE_ROOT=$pwd
+export CODESPACE_ROOT=$(pwd)
 export CSCLIENT='$CODESPACE_ROOT/src/Portal/PortalWebsite/Src/Website'
 export CSSERVER='$CODESPACE_ROOT/src/services/containers/VsClk.Portal.WebSite'
 alias cdclient='cd \$CSCLIENT'

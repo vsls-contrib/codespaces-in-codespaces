@@ -47,7 +47,7 @@ echo -e $PALETTE_CYAN"\n- Thanks, *$AZ_DO_USERNAME*! Please provide your AzDO PA
 
 stty_orig=$(stty -g)
 stty -echo
-read -p " ↳ PAT ([code][R/W] + [packaging][R]): " AZ_DO_PAT_INPUT
+read -p " ↳ PAT (code[R/W] + packaging[R]): " AZ_DO_PAT_INPUT
 stty $stty_orig
 echo ""
 
@@ -69,7 +69,7 @@ git remote add azdo https://$AZ_DO_USERNAME:$AZ_DO_PAT@devdiv.visualstudio.com/O
 echo -e $PALETTE_LIGHT_YELLOW"\n ⌬ Fetching the repo\n"$PALETTE_RESET
 
 git checkout -b old-master
-git branch --set-upstream-to=origin/master
+git branch --track origin/master
 git checkout master
 
 git pull azdo master:master --force
