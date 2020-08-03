@@ -13,7 +13,7 @@
                     <use xlink:href="#path-1"></use>
                 </mask>
                 <use fill="#D8D8D8" xlink:href="#path-1"></use>
-                <image id="Bitmap" mask="url(#mask-2)" x="0" y="0" width="22" height="21" xlink:href="https://octodex.github.com/images/nyantocat.gif"></image>
+                <image id="Bitmap" mask="url(#mask-2)" x="0" y="0" width="22" height="21" xlink:href="https://octodex.github.com/images/nyantocat.png"></image>
             </g>
             <text id="Codespace-ready" font-family="Helvetica" font-size="11" font-weight="normal" line-spacing="12" letter-spacing="0.2" fill="#24292E" text-decoration="inherit">
                 <tspan x="29" y="14" text-decoration="inherit">Codespace-ready</tspan>
