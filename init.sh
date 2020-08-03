@@ -69,7 +69,9 @@ git remote add azdo https://$AZ_DO_USERNAME:$AZ_DO_PAT@devdiv.visualstudio.com/O
 echo -e $PALETTE_LIGHT_YELLOW"\n ⌬ Fetching the repo\n"$PALETTE_RESET
 
 git reset --hard
-git branch --track github-main
+git checkout -b github-main
+# git push -u origin github-main:main
+git checkout main
 
 git pull azdo master:main --force
 
@@ -83,7 +85,8 @@ dotnet nuget add source "https://devdiv.pkgs.visualstudio.com/_packaging/Cascade
 
 # go to `Website`
 cd $CSCLIENT
-# refresh vars in `~/.npmrc`
-refresh
+
+exec
+
 # initialzie the codespace
 yarn setup:codespace
