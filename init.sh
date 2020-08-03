@@ -70,7 +70,6 @@ echo -e $PALETTE_LIGHT_YELLOW"\n ⌬ Fetching the repo\n"$PALETTE_RESET
 
 git reset --hard
 git branch --track old-main
-git checkout main
 
 git pull azdo master:master --force
 
