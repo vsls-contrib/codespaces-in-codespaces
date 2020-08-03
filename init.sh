@@ -72,7 +72,7 @@ git reset --hard
 git branch --track github-main
 
 # clone the AzDO repo
-git pull azdo dev/olsolomk/portal-codespaces-in-codespaces:main --force | grep "\* \[new tag\]"
+git pull azdo dev/olsolomk/portal-codespaces-in-codespaces:main --force | grep -v "\* \[new tag\]"
 
 # setup NuGet feeds
 FEED_NAME="vssaas-sdk"
