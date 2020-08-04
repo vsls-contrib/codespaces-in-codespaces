@@ -83,9 +83,11 @@ FEED_NAME="Cascade"
 dotnet nuget remove source $FEED_NAME
 dotnet nuget add source "https://devdiv.pkgs.visualstudio.com/_packaging/Cascade/nuget/v3/index.json" -n $FEED_NAME -u "devdiv" -p "$AZ_DO_PAT" --store-password-in-clear-text
 
-# pick up variables in `./npmrc`
-exec bash
 # go to `Website`
 cd $CSCLIENT
-# initialzie the codespace
+# initialize the codespace
 yarn setup:codespace
+# go to `Website`
+cd $CSCLIENT
+
+exec bash
