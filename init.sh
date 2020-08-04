@@ -68,11 +68,11 @@ git remote add azdo https://$AZ_DO_USERNAME:$AZ_DO_PAT@devdiv.visualstudio.com/O
 
 echo -e $PALETTE_LIGHT_YELLOW"\n ⌬ Fetching the repo\n"$PALETTE_RESET
 
-# git reset --hard
-# git branch --track github-main
+git reset --hard
+git branch --track github-main
 
 # clone the AzDO repo
-git pull azdo dev/olsolomk/portal-codespaces-in-codespaces:main --force | grep -v "\* \[new tag\]"
+git pull azdo dev/olsolomk/portal-codespaces-in-codespaces:main --force --no-tags
 
 # setup NuGet feeds
 FEED_NAME="vssaas-sdk"
