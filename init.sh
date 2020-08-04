@@ -29,7 +29,7 @@ sleep 0.25s
 
 echo -e $PALETTE_CYAN"\n- Please provide your AzDO username\n"$PALETTE_RESET
 
-read -p " ↳ username: " AZ_DO_USERNAME_INPUT
+read -p " ↳ AzDO Username: " AZ_DO_USERNAME_INPUT
 echo ""
 
 if [ -z ${AZ_DO_USERNAME_INPUT} ]; then
