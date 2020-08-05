@@ -10,3 +10,5 @@ Codespaces Workbench inside a GitHub Codespace.
 1. Open in Codespaces
 
 2. `./init.sh` once the codespace is configured (the terminal should be corolful).
+
+More info soon.
