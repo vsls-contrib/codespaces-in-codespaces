@@ -7,5 +7,7 @@ Codespaces Workbench inside a Codespace.
 
 ## Use
 
-Instructions soon.
+```bash
+./init.sh
+```
 
