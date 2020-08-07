@@ -6,7 +6,7 @@ Codespaces Workbench inside a GitHub Codespace.
 
 ### Use
 
-Please follow instructions on the 🔒[/codespaces-in-codespaces-docs](https://github.com/bookish-potato/codespaces-in-codespaces-docs) repo.
+Please follow instructions on the 🔒[codespaces-in-codespaces-docs](https://github.com/bookish-potato/codespaces-in-codespaces-docs) repo.
 
 ### Questions / Issues
 
