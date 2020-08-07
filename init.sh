@@ -110,7 +110,7 @@ if [ "$AZ_DO_PAT" != "$AZ_DO_PAT_INPUT" ]; then
     export AZ_DO_PAT=$AZ_DO_PAT_INPUT
     export AZ_DO_PAT_BASE64=$(echo -n $AZ_DO_PAT | base64)
 
-    echo "export AZ_DO_PAT=$AZ_DO_PAT\nexport AZ_DO_PAT_BASE64=$AZ_DO_PAT_BASE64" >> ~/.bashrc
+    echo -e "export AZ_DO_PAT=$AZ_DO_PAT\nexport AZ_DO_PAT_BASE64=$AZ_DO_PAT_BASE64" >> ~/.bashrc
 fi
 
 # setup NuGet feeds
