@@ -27,12 +27,19 @@ echo -e $PALETTE_PURPLE"\n🏃 Lets setup the Codesace"$PALETTE_RESET
 
 sleep 0.25s
 
+unset AZ_DO_USERNAME_SUFFIX;
+if [ -z "$AZ_DO_USERNAME" ]; then
+    AZ_DO_USERNAME_SUFFIX=""
+else
+    AZ_DO_USERNAME_SUFFIX="(press enter to use *$AZ_DO_USERNAME*)"
+fi
+
 echo -e $PALETTE_CYAN"\n- Please provide your AzDO username\n"$PALETTE_RESET
 
-read -p " ↳ AzDO Username: " AZ_DO_USERNAME_INPUT
+read -p " ↳ AzDO Username$AZ_DO_USERNAME_SUFFIX: " AZ_DO_USERNAME_INPUT
 echo ""
 
-if [ -z ${AZ_DO_USERNAME_INPUT} ]; then
+if [ -z "$AZ_DO_USERNAME_INPUT" ]; then
     echo -e $PALETTE_RED"  🗿 No name - no fame"$PALETTE_RESET
     exit 1
 fi
@@ -51,7 +58,6 @@ export AZ_DO_USERNAME=$AZ_DO_USERNAME
 " >> ~/.bashrc
 
 echo -e $PALETTE_CYAN"\n- Thanks, *$AZ_DO_USERNAME*! Please provide your AzDO PAT\n"$PALETTE_RESET
-
 
 unset AZ_DO_PAT_INPUT
 prompt=" ↳ PAT (code[R/W] + packaging[R]): $PALETTE_DIM"
