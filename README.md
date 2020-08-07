@@ -4,11 +4,11 @@
 
 Codespaces Workbench inside a GitHub Codespace.
 
-## Use
+### Use
 
 Please follow instructions on the 🔒[/codespaces-in-codespaces-docs](https://github.com/bookish-potato/codespaces-in-codespaces-docs) repo.
 
-## Questions / Issues
+### Questions / Issues
 
 - Feedback is always welcomed, create issues on [/codespaces-in-codespaces-docs](https://github.com/bookish-potato/codespaces-in-codespaces-docs) repo if something. 🤗
 
