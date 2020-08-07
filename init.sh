@@ -41,7 +41,7 @@ IFS=@ read -r username domain <<< "$AZ_DO_USERNAME_INPUT"
 
 if [ ! -z "$domain" ]; then
     AZ_DO_USERNAME_INPUT="$username"
-    echo -e $PALETTE_LIGHT_GRAY"  * using *$AZ_DO_USERNAME_INPUT* as AzDO username. "$PALETTE_RESET
+    echo -e $PALETTE_DIM"  * using *$AZ_DO_USERNAME_INPUT* as AzDO username. "$PALETTE_RESET
 fi
 
 export AZ_DO_USERNAME=$AZ_DO_USERNAME_INPUT
@@ -54,7 +54,7 @@ echo -e $PALETTE_CYAN"\n- Thanks, *$AZ_DO_USERNAME*! Please provide your AzDO PA
 
 
 unset AZ_DO_PAT_INPUT
-prompt=" ↳ PAT (code[R/W] + packaging[R]): $PALETTE_LIGHTGRAY"
+prompt=" ↳ PAT (code[R/W] + packaging[R]): $PALETTE_DIM"
 while IFS= read -p "$prompt" -r -s -n 1 char
 do
     if [[ $char == $'\0' ]]
