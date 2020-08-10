@@ -136,10 +136,6 @@ export PALETTE_LIGHTGRAY_U='\e[47m'
 # Normal Text
 export PALETTE_RESET='\e[0m'
 
-CURRENT_SCRIPT=\$(basename \"\$0\")
-
-echo \$CURRENT_SCRIPT
-
 if [ -d \$CSCLIENT ]; then
   cd \$CSCLIENT
 elif [ \$(basename \"\$0\") != 'bootstrap' ]
