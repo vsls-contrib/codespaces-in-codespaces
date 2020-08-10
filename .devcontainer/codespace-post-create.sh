@@ -51,6 +51,8 @@ echo "
 
 BASH_RC_FILE=~/.bashrc
 
+source $BASH_RC_FILE
+
 PRE_OMB_BASH_CONFIG=~/.bashrc.pre-oh-my-bash
 if [ -f $PRE_OMB_BASH_CONFIG ]; then
   cat $PRE_OMB_BASH_CONFIG $BASH_RC_FILE >> $BASH_RC_FILE
@@ -68,7 +70,13 @@ alias cdserver='cd \$CSSERVER'
 alias codespaces:setup='bash ./init.sh && cdclient && exec bash'
 alias do='dotnet'
 # misc
-alias code='if code-insiders -v COMMAND &> /dev/null; then code-insiders \$@; else code \$@; fi'
+alias code='f() {
+    if code-insiders -v &> /dev/null; then
+      code-insiders \$@;
+    else
+      code \$@;
+    fi
+};f'
 alias ls='ls --color=auto'
 alias ww='watch -n 1 \"date && echo -e \ &&\"'
 alias refresh='exec bash'
