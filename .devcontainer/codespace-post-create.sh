@@ -53,7 +53,7 @@ BASH_RC_FILE=~/.bashrc
 
 PRE_OMB_BASH_CONFIG=~/.bashrc.pre-oh-my-bash
 if [ -f $PRE_OMB_BASH_CONFIG ]; then
-  cat $PRE_OMB_BASH_CONFIG $BASH_RC_FILE > $BASH_RC_FILE
+  cat $PRE_OMB_BASH_CONFIG $BASH_RC_FILE >> $BASH_RC_FILE
 fi
 
 # add .bashrc config
@@ -66,12 +66,13 @@ alias cdroot='cd \$CODESPACE_ROOT'
 alias cdclient='cd \$CSCLIENT'
 alias cdserver='cd \$CSSERVER'
 alias codespaces:setup='bash ./init.sh && cdclient && exec bash'
+alias do='dotnet'
 # misc
 alias code='if code-insiders -v COMMAND &> /dev/null; then code-insiders \$@; else code \$@; fi'
 alias ls='ls --color=auto'
 alias ww='watch -n 1 \"date && echo -e \ &&\"'
-alias do='dotnet'
 alias refresh='exec bash'
+alias bashconfig=\"code $BASH_RC_FILE\"
 # git
 alias push='git push -u origin HEAD'
 alias pull='git pull'
