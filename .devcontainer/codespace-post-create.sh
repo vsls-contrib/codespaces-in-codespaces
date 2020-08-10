@@ -80,6 +80,7 @@ alias ls='ls --color=auto'
 alias ww='watch -n 1 \"date && echo -e \ &&\"'
 alias refresh='exec bash'
 alias bashconfig=\"code $BASH_RC_FILE\"
+alias ports='lsof -n -i -P | grep TCP'
 # git
 alias push='git push -u origin HEAD'
 alias pull='git pull'
@@ -135,9 +136,14 @@ export PALETTE_LIGHTGRAY_U='\e[47m'
 # Normal Text
 export PALETTE_RESET='\e[0m'
 
+CURRENT_SCRIPT=\$(basename \"$0\")
+
+echo \$CURRENT_SCRIPT
+
 if [ -d \$CSCLIENT ]; then
   cd \$CSCLIENT
-else
+elif [ \$(basename \"\$0\") != 'bootstrap' ]
+then
   clear
   echo -e \"\$PALETTE_DIM\n💡  Run\$PALETTE_BLUE script/bootstrap\$PALETTE_RESET\$PALETTE_DIM when ready.\n\$PALETTE_RESET\"
 fi
