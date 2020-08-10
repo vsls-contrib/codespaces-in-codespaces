@@ -54,6 +54,7 @@ BASH_RC_FILE=~/.bashrc
 PRE_OMB_BASH_CONFIG=~/.bashrc.pre-oh-my-bash
 if [ -f $PRE_OMB_BASH_CONFIG ]; then
   cat $PRE_OMB_BASH_CONFIG >> $BASH_RC_FILE
+  rm $PRE_OMB_BASH_CONFIG
 fi
 
 # add .bashrc config
