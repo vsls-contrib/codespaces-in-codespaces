@@ -66,7 +66,6 @@ export CSSERVER=\"\$CODESPACE_ROOT/src/services/containers/VsClk.Portal.WebSite\
 alias cdroot='cd \$CODESPACE_ROOT'
 alias cdclient='cd \$CSCLIENT'
 alias cdserver='cd \$CSSERVER'
-alias codespaces:setup='bash ./init.sh && cdclient && exec bash'
 alias do='dotnet'
 # misc
 alias code='f() {
@@ -136,6 +135,8 @@ export PALETTE_LIGHTGRAY_U='\e[47m'
 # Normal Text
 export PALETTE_RESET='\e[0m'
 
+# change dir to the `/Website` folder if present (codespace is initialized),
+# otherwise show the hint
 if [ -d \$CSCLIENT ]; then
   cd \$CSCLIENT
 elif [ \$(basename \"\$0\") != 'bootstrap' ]
