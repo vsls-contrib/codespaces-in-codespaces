@@ -113,6 +113,8 @@ export PALETTE_LIGHTGRAY_U='\e[47m'
 
 # Normal Text
 export PALETTE_RESET='\e[0m'
+
+cd \$CSCLIENT
 " >> ~/.bashrc
 
 exec bash
