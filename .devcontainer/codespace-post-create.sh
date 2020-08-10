@@ -120,7 +120,12 @@ export PALETTE_LIGHTGRAY_U='\e[47m'
 # Normal Text
 export PALETTE_RESET='\e[0m'
 
-[ -d \$CSCLIENT ] && cd \$CSCLIENT
+if [ -d \$CSCLIENT ]; then
+  cd \$CSCLIENT
+else
+  clear
+  echo -e \"\$PALETTE_DIM\n💡  Run\$PALETTE_BLUE script/bootstrap\$PALETTE_RESET\$PALETTE_DIM when ready.\n\$PALETTE_RESET\"
+fi
 " >> ~/.bashrc
 
 exec bash
