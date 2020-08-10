@@ -49,6 +49,13 @@ echo "
 ; end auth token
 " >> ~/.npmrc
 
+BASH_RC_FILE="~/.bashrc"
+
+PRE_OMB_BASH_CONFIG="~/.bashrc.pre-oh-my-bash"
+if [ -f $PRE_OMB_BASH_CONFIG ]; then
+  cat $PRE_OMB_BASH_CONFIG >> $BASH_RC_FILE
+fi
+
 # add .bashrc config
 echo "
 # workspace
@@ -126,6 +133,7 @@ else
   clear
   echo -e \"\$PALETTE_DIM\n💡  Run\$PALETTE_BLUE script/bootstrap\$PALETTE_RESET\$PALETTE_DIM when ready.\n\$PALETTE_RESET\"
 fi
-" >> ~/.bashrc
+
+" >> $BASH_RC_FILE
 
 exec bash
