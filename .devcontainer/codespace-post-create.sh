@@ -61,16 +61,16 @@ alias cdserver='cd \$CSSERVER'
 alias codespaces:setup='bash ./init.sh && cdclient && exec bash'
 # misc
 alias code='code-insiders'
-alias ls='ls --color=auto'
-alias ww='watch -n 1 \"date && echo -e \ &&$1\"'
-alias do='dotnet$1'
+alias ls='ls --color=auto \$@'
+alias ww='watch -n 1 \"date && echo -e \ &&\$@\"'
+alias do='dotnet\$@'
 alias refresh='exec bash'
 # git
 alias push='git push -u origin HEAD'
 alias pull='git pull'
 alias fetch='git fetch origin'
 alias pullmaster='git pull origin master'
-alias branch='f() { git checkout master && git pull origin master && git checkout -b dev/\$AZ_DO_USERNAME_INPUT/\$1 };f'
+alias branch='f() { git checkout master && git pull origin master && git checkout -b dev/\$AZ_DO_USERNAME_INPUT/\$@ };f'
 
 ## Color variables
 
