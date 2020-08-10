@@ -87,7 +87,7 @@ alias sync='pull && push'
 alias fetch='git fetch origin'
 alias pullmaster='git pull origin master'
 alias branch='f() {
-    BRANCH_NAME=\"dev/\$AZ_DO_USERNAME_INPUT/\$1\";
+    BRANCH_NAME=\"dev/\$AZ_DO_USERNAME/\$1\";
     git pull azdo master:main;
     git branch \$BRANCH_NAME main -u azdo \$BRANCH_NAME --color;
     git checkout \$BRANCH_NAME;
