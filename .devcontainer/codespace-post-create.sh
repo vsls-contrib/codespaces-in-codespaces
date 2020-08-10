@@ -51,8 +51,6 @@ echo "
 
 BASH_RC_FILE=~/.bashrc
 
-source $BASH_RC_FILE
-
 PRE_OMB_BASH_CONFIG=~/.bashrc.pre-oh-my-bash
 if [ -f $PRE_OMB_BASH_CONFIG ]; then
   cat $PRE_OMB_BASH_CONFIG $BASH_RC_FILE >> $BASH_RC_FILE
