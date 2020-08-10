@@ -49,11 +49,11 @@ echo "
 ; end auth token
 " >> ~/.npmrc
 
-BASH_RC_FILE="~/.bashrc"
+BASH_RC_FILE=~/.bashrc
 
-PRE_OMB_BASH_CONFIG="~/.bashrc.pre-oh-my-bash"
+PRE_OMB_BASH_CONFIG=~/.bashrc.pre-oh-my-bash
 if [ -f $PRE_OMB_BASH_CONFIG ]; then
-  cat $PRE_OMB_BASH_CONFIG >> $BASH_RC_FILE
+  cat $PRE_OMB_BASH_CONFIG > $BASH_RC_FILE
 fi
 
 # add .bashrc config

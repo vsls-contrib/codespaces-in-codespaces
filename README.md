@@ -10,5 +10,5 @@ Please follow instructions on the 🔒[codespaces-in-codespaces-docs](https://gi
 
 ### Issues/Feedback
 
-- Feedback appreciated, create issues on [codespaces-in-codespaces-docs](https://github.com/bookish-potato/codespaces-in-codespaces-docs) repo if anything. 🤗
-- Ping [@legomushroom](https://github.com/legomushroom) if the GitHub issues is not enough (`olsolomk` if inside Microsoft). 🏓
+- Feedback appreciated, create issues on [codespaces-in-codespaces-docs](https://github.com/bookish-potato/codespaces-in-codespaces-docs) repo if anything 🤗
+- Ping [@legomushroom](https://github.com/legomushroom) if the GitHub issues is not enough (`olsolomk` if inside Microsoft) 🏓
