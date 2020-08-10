@@ -67,7 +67,7 @@ alias cdclient='cd \$CSCLIENT'
 alias cdserver='cd \$CSSERVER'
 alias codespaces:setup='bash ./init.sh && cdclient && exec bash'
 # misc
-alias code='code-insiders'
+alias code='if code-insiders -v COMMAND &> /dev/null; then code-insiders \$@; else code \$@; fi'
 alias ls='ls --color=auto'
 alias ww='watch -n 1 \"date && echo -e \ &&\"'
 alias do='dotnet'
