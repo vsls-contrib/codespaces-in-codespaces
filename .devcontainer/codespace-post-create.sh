@@ -81,16 +81,17 @@ alias refresh='exec bash'
 alias bashconfig=\"code $BASH_RC_FILE\"
 alias ports='lsof -n -i -P | grep TCP'
 # git
-alias push='git push -u origin HEAD'
+alias push='git push -u azdo HEAD'
 alias pull='git pull'
 alias sync='pull && push'
-alias fetch='git fetch origin'
-alias pullmaster='git pull origin master'
+alias fetch='git fetch azdo'
+alias pullmaster='git pull azdo master'
 alias branch='f() {
     BRANCH_NAME=\"dev/\$AZ_DO_USERNAME/\$1\";
-    git pull azdo master:main;
-    git branch \$BRANCH_NAME main -u azdo \$BRANCH_NAME --color;
+    git pull azdo master:main --no-tags;
+    git branch \$BRANCH_NAME main --color;
     git checkout \$BRANCH_NAME;
+    git push -u azdo \$BRANCH_NAME;
 };f'
 
 ## Color variables
