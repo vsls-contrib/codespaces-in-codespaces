@@ -67,6 +67,7 @@ alias cdroot='cd \$CODESPACE_ROOT'
 alias cdclient='cd \$CSCLIENT'
 alias cdserver='cd \$CSSERVER'
 alias do='dotnet'
+alias ya='yarn'
 # misc
 alias code='f() {
     if code-insiders -v &> /dev/null; then
