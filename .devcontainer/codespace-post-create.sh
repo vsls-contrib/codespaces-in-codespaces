@@ -82,7 +82,7 @@ alias bashconfig=\"code $BASH_RC_FILE\"
 alias ports='lsof -n -i -P | grep TCP'
 # git
 alias push='git push -u azdo HEAD'
-alias pull='git pull'
+alias pull='git pull azdo'
 alias sync='pull && push'
 alias fetch='git fetch azdo'
 alias pullmaster='git pull azdo master'
