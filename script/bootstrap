@@ -4,6 +4,10 @@ clear
 
 source ~/.bashrc
 
+if [ -f ~/.cs-envirnment ]; then
+    source ~/.cs-envirnment
+fi
+
 GREETINGS=("Bonjour" "Hello" "Salam" "Привет" "Вітаю" "Hola" "Zdravo" "Ciao" "Salut" "Hallo" "Nǐ hǎo" "Xin chào" "Yeoboseyo" "Aloha" "Namaskaram" "Wannakam" "Dzień dobry")
 GREETING=${GREETINGS[$RANDOM % ${#GREETINGS[@]} ]}
 
@@ -108,9 +112,11 @@ git pull azdo master:main --force --no-tags
 
 if [ "$AZ_DO_PAT" != "$AZ_DO_PAT_INPUT" ]; then
     export AZ_DO_PAT=$AZ_DO_PAT_INPUT
-    export AZ_DO_PAT_BASE64=$(echo -n $AZ_DO_PAT | base64)
-
-    echo -e "export AZ_DO_PAT=$AZ_DO_PAT\nexport AZ_DO_PAT_BASE64=$AZ_DO_PAT_BASE64" >> ~/.bashrc
+    AZ_DO_PAT_BASE64=$(echo -n $AZ_DO_PAT | base64)
+    # replace env variable reference in the .npmrc
+    sed -i "s/\${AZ_DO_PAT_BASE64}/$AZ_DO_PAT_BASE64/g" ~/.npmrc
+    # write the token to the env file
+    echo -e "export AZ_DO_PAT=$AZ_DO_PAT" >> ~/.cs-envirnment
 fi
 
 # setup NuGet feeds
