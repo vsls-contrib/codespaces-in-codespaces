@@ -6,7 +6,7 @@ Bootstrap script to run Codespaces Workbench in a GitHub Codespace.
 
 ### Use
 
-Please follow instructions on the 🔒[codespaces-in-codespaces-docs](https://github.com/bookish-potato/codespaces-in-codespaces-docs) repo.
+Please follow instructions on the 🔒[codespaces-in-codespaces-docs](https://github.com/bookish-potato/codespaces-in-codespaces-docs) repo ([mirror on Azure DevOps](https://devdiv.visualstudio.com/DefaultCollection/OnlineServices/_git/codespaces-in-codespaces-docs)).
 
 ### Issues/Feedback
 
