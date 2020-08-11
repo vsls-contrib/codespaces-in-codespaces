@@ -43,7 +43,7 @@ fi
 echo -e $PALETTE_CYAN"\n- Please provide your AzDO username\n"$PALETTE_RESET
 
 unset AZ_DO_USERNAME_INPUT
-prompt=" ↳ PAT code[R/W] + packaging[R]$AZ_DO_PASSWORD_SUFFIX: $PALETTE_DIM"
+prompt=" ↳ AzDO Username$AZ_DO_USERNAME_SUFFIX: " AZ_DO_USERNAME_INPUT
 while IFS= read -p "$prompt" -r -s -n 1 char
 do
     # echo $char
