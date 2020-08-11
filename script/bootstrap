@@ -42,18 +42,26 @@ fi
 
 echo -e $PALETTE_CYAN"\n- Please provide your AzDO username\n"$PALETTE_RESET
 
-read -p " ↳ AzDO Username$AZ_DO_USERNAME_SUFFIX: " AZ_DO_USERNAME_INPUT
-echo ""
-
-if [ -z "$AZ_DO_USERNAME_INPUT" ]; then
-    if [ -z "$AZ_DO_USERNAME" ]; then
-        echo -e $PALETTE_RED"  🗿 No name - no fame"$PALETTE_RESET
-        exit 1
-    else
-        AZ_DO_USERNAME_INPUT=$AZ_DO_USERNAME
-        echo -e $PALETTE_DIM"  * reusing *$AZ_DO_USERNAME_INPUT* as AzDO username.\n"$PALETTE_RESET
+unset AZ_DO_USERNAME_INPUT
+prompt=" ↳ PAT code[R/W] + packaging[R]$AZ_DO_PASSWORD_SUFFIX: $PALETTE_DIM"
+while IFS= read -p "$prompt" -r -s -n 1 char
+do
+    # echo $char
+    if [[ $char == $'\0' ]]; then
+        break
     fi
-fi
+
+    if [[ $char == $'\b' ]]; then
+        prompt="$char"
+        AZ_DO_USERNAME_INPUT=${AZ_DO_USERNAME_INPUT::-1}
+        continue
+    fi
+
+    prompt="$char"
+    AZ_DO_USERNAME_INPUT+="$char"
+done
+
+echo -e " "$PALETTE_RESET
 
 IFS=@ read -r username domain <<< "$AZ_DO_USERNAME_INPUT"
 if [ ! -z "$domain" ]; then
