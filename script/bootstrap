@@ -141,13 +141,13 @@ if [ "$AZ_DO_PAT" != "$AZ_DO_PAT_INPUT" ]; then
     export AZ_DO_PAT=$AZ_DO_PAT_INPUT
     AZ_DO_PAT_BASE64=$(echo -n $AZ_DO_PAT | base64)
     # replace env variable reference in the .npmrc
-    sed -i "s/\${AZ_DO_PAT_BASE64}/$AZ_DO_PAT_BASE64/g" ~/.npmrc
+    sed -i -E "s/_password=.+$/_password=$AZ_DO_PAT_BASE64/g" ~/.npmrc
     # write the token to the env file
     echo -e "export AZ_DO_PAT=$AZ_DO_PAT" >> ~/.cs-envirnment
 fi
 
 if [ ! -d $CSCLIENT ]; then
-    echo -e $PALETTE_RED"\n\n ❗ Could not clone the \`vsclk-core\` repo, are the credentials correct?\n"$PALETTE_RESET
+    echo -e $PALETTE_RED"\n ❗ Could not clone the \`vsclk-core\` repo, are the credentials correct?\n"$PALETTE_RESET
     exit 1
 fi
 
