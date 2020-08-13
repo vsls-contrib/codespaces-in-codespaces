@@ -1,3 +1,4 @@
 - add the `--pristine` option that will reset to the GitHub main branch
 - VSCode UI shows too many git updates/changes
+- explore if we can have DNS/proxy inside the codespace
 - don't use PAT in remote name
