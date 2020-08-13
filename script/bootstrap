@@ -146,7 +146,7 @@ if [ "$AZ_DO_PAT" != "$AZ_DO_PAT_INPUT" ]; then
 fi
 
 if [ ! -d $CSCLIENT ]; then
-    echo -e $PALETTE_RED"\n\n ❗ Could not clone the `vsclk-core` repo, are the credentials correct?\n"$PALETTE_RESET
+    echo -e $PALETTE_RED"\n\n ❗ Could not clone the \`vsclk-core\` repo, are the credentials correct?\n"$PALETTE_RESET
     exit 1
 fi
 
