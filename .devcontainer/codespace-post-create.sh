@@ -137,7 +137,7 @@ export PALETTE_LIGHTGRAY_U='\e[47m'
 # Normal Text
 export PALETTE_RESET='\e[0m'
 
-# change dir to the `/Website` folder if present (codespace is initialized),
+# change dir to the \`Website\` folder if present (codespace is initialized),
 # otherwise show the hint
 if [ -d \$CSCLIENT ]; then
   cd \$CSCLIENT

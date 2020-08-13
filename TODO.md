@@ -3,3 +3,4 @@
 - improve docs on local DNS setup
 - explore if we can have DNS/proxy inside the codespace
 - don't use PAT in remote name
+- connect to GH Codespace from VSC Desktop docs: https://docs.github.com/en/github/developing-online-with-codespaces/connecting-to-your-codespace-from-visual-studio-code
