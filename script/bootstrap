@@ -129,6 +129,8 @@ git remote add azdo https://$AZ_DO_USERNAME:$AZ_DO_PAT_INPUT@devdiv.visualstudio
 echo -e $PALETTE_LIGHT_YELLOW"\n ⌬ Fetching the repo\n"$PALETTE_RESET
 
 git reset --hard
+git checkout main
+
 git branch --track github-main
 
 # clone the AzDO repo
@@ -141,6 +143,10 @@ if [ "$AZ_DO_PAT" != "$AZ_DO_PAT_INPUT" ]; then
     sed -i "s/\${AZ_DO_PAT_BASE64}/$AZ_DO_PAT_BASE64/g" ~/.npmrc
     # write the token to the env file
     echo -e "export AZ_DO_PAT=$AZ_DO_PAT" >> ~/.cs-envirnment
+fi
+
+if [ ! -d $CSCLIENT ]; then
+    echo $PALETTE_RED"\n ❗ Could not clone the `vsclk-core` repo, are the credentials correct?\n"$PALETTE_RESET
 fi
 
 # setup NuGet feeds
