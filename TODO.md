@@ -1,0 +1,1 @@
+- Add the `--pristine` option that will reset to the GitHub main branch
