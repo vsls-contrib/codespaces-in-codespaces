@@ -147,6 +147,7 @@ fi
 
 if [ ! -d $CSCLIENT ]; then
     echo $PALETTE_RED"\n ❗ Could not clone the `vsclk-core` repo, are the credentials correct?\n"$PALETTE_RESET
+    exit 1
 fi
 
 # setup NuGet feeds
