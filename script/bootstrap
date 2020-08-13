@@ -29,7 +29,7 @@ echo -e $PALETTE_GREEN"\n\n     🖖 👽  $GREETING, Codespacer 👽 🖖\n"$PA
 
 sleep 1s
 
-echo -e $PALETTE_PURPLE"\n🏃 Lets setup the Codesace"$PALETTE_RESET
+echo -e $PALETTE_PURPLE"\n🏃 Lets setup the Codespace"$PALETTE_RESET
 
 sleep 0.25s
 
@@ -42,7 +42,7 @@ fi
 
 echo -e $PALETTE_CYAN"\n- Please provide your AzDO username\n"$PALETTE_RESET
 
-printf " ↳ AzDO Username$AZ_DO_USERNAME_SUFFIX: $PALETTE_PURPLE" 
+printf " ↳ AzDO Username$AZ_DO_USERNAME_SUFFIX: $PALETTE_PURPLE"
 
 read AZ_DO_USERNAME_INPUT
 
@@ -124,6 +124,7 @@ if [ -z ${AZ_DO_PAT_INPUT} ]; then
     fi
 fi
 
+git remote remove azdo
 git remote add azdo https://$AZ_DO_USERNAME:$AZ_DO_PAT_INPUT@devdiv.visualstudio.com/OnlineServices/_git/vsclk-core
 
 echo -e $PALETTE_LIGHT_YELLOW"\n ⌬ Fetching the repo\n"$PALETTE_RESET
