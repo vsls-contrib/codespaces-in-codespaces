@@ -6,7 +6,7 @@ Bootstrap script to run Codespaces Workbench in a GitHub Codespace.
 
 ### Use
 
-Please follow instructions on the [vscs wiki page](https://github.com/microsoft/vssaas-planning/wiki/Codespaces-Workbench-in-a-GitHub-Codespace). Don't have access? Join the [vscode-vssaas team](https://repos.opensource.microsoft.com/microsoft/teams/vscode-vssaas) on opensource.microsoft.com
+Please follow instructions on the [vscs wiki page](https://github.com/microsoft/vssaas-planning/wiki/Codespaces-Workbench-in-a-GitHub-Codespace). Don't have access? Join the [vscode-vssaas team](https://repos.opensource.microsoft.com/microsoft/teams/vscode-vssaas) on [opensource.microsoft.com](https://repos.opensource.microsoft.com/microsoft/teams/vscode-vssaas).
 
 ### Issues/Feedback
 
