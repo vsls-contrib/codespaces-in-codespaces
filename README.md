@@ -8,8 +8,6 @@ Bootstrap script to run Codespaces Workbench in a GitHub Codespace.
 
 Please follow instructions on the [vscs wiki page](https://github.com/microsoft/vssaas-planning/wiki/Codespaces-Workbench-in-a-GitHub-Codespace). Don't have access? Join the [vscode-vssaas team](https://repos.opensource.microsoft.com/microsoft/teams/vscode-vssaas) on opensource.microsoft.com
 
-###### Alternitavely, follow instructions on the 🔒[codespaces-in-codespaces-docs](https://github.com/bookish-potato/codespaces-in-codespaces-docs) repo ([or mirror on Azure DevOps](https://devdiv.visualstudio.com/DefaultCollection/OnlineServices/_git/codespaces-in-codespaces-docs)), but these repose will be deprecated soon in favor of the [vscs wiki page](https://github.com/microsoft/vssaas-planning/wiki/Codespaces-Workbench-in-a-GitHub-Codespace) above.
-
 ### Issues/Feedback
 
 - Feedback appreciated, create issues on [vscs planning](https://github.com/microsoft/vssaas-planning) repo if anything 🤗
