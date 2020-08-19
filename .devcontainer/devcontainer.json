@@ -10,8 +10,6 @@
 		"ms-dotnettools.csharp"
 	],
 	"forwardPorts": [5000, 5001],
-	"remoteEnv": {
-		"CODESPACE_IN_CODESPACE": "true",
-	},
+	"remoteEnv": {},
 	"postCreateCommand": "/bin/sh .devcontainer/codespace-post-create.sh"
 }
