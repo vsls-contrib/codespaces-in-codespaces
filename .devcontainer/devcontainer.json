@@ -1,7 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/microsoft/vscode/master/extensions/configuration-editing/schemas/devContainer.schema.json",
 	"name": "Codespaces in GitHub Codespaces",
-	"image": "mcr.microsoft.com/dotnet/core/sdk:3.1.200",
+	"image": "ghcr.io/vsls-contrib/liveshare-in-codespaces:main",
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash"
 	},
