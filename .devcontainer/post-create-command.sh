@@ -1,5 +1,6 @@
-# [change][optional file]
+# Create CEDev directory
+mkdir ~/CEDev
 
-# install yarn dependencies in the `workspaceFolder`
-# directory defined by $ADO_REPO_DEFAULT_PATH
-yarn install
+dotnet restore
+dotnet build
+
