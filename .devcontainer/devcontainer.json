@@ -12,7 +12,7 @@
 		// [change] ADO repo URL
 		"ADO_REPO_URL": "https://devdiv.visualstudio.com/OnlineServices/_git/vsclk-core",
 		// [change] relative to the ADO repo root
-		"ADO_REPO_DEFAULT_PATH": "/root/workspace/codespaces-in-codespaces/src/Portal/PortalWebsite/Src/Website",
+		"ADO_REPO_DEFAULT_PATH": "",
 		/*
 		 * [change][optional] absolute path to .npmrc file - /root/workspace/{this-repo-name}/path/from/repo/root/.npmrc
 		 * if the env variable is not set, it will pick up the `.npmrc` file in the repo root, if present
