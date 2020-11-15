@@ -58,7 +58,6 @@ export CODESPACE_ROOT=$(pwd)
 export CODESPACE_DEFAULT_PATH="\$CODESPACE_ROOT\$ADO_REPO_DEFAULT_PATH"
 alias cdroot='cd \$CODESPACE_ROOT'
 alias cddefault='cd \$CODESPACE_DEFAULT_PATH'
-alias do='dotnet'
 alias ya='yarn'
 # misc
 code()
