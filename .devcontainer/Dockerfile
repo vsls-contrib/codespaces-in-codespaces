@@ -1,5 +1,7 @@
 FROM mcr.microsoft.com/vscode/devcontainers/universal:linux
 
+USER codespace
+
 # Install .NET Core SDK
 ENV DOTNET_SDK_DOWNLOAD_URL https://dotnetcli.blob.core.windows.net/dotnet/Sdk/3.1.200/dotnet-sdk-3.1.200-linux-x64.tar.gz
 
