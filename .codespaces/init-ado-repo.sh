@@ -214,12 +214,14 @@ git checkout $GIT_DEFAULT_BRANCH_NAME &>/dev/null
 
 if [ "$ADO_PAT" != "$ADO_PAT_INPUT" ]; then
     export ADO_PAT=$ADO_PAT_INPUT
-    export ADO_PAT_BASE64=$(echo -n $ADO_PAT | base64)
-    # replace env variable reference in the .npmrc
-    sed -i -E "s/_password=.+$/_password=$ADO_PAT_BASE64/g" ~/.npmrc
-    # write the token to the env file
-    echo -e "export ADO_PAT=$ADO_PAT" >> ~/.cs-environment
 fi
+
+export ADO_PAT_BASE64=$(echo -n $ADO_PAT | base64)
+# replace env variable reference in the .npmrc
+sed -i -E "s/_password=.+$/_password=$ADO_PAT_BASE64/g" ~/.npmrc
+# write the token to the env file
+echo -e "export ADO_PAT=$ADO_PAT" >> ~/.cs-environment
+
 
 if [ ! -d $CODESPACE_DEFAULT_PATH ]; then
     echo -e $PALETTE_RED"\n ❗ Cannot find the \`$CODESPACE_DEFAULT_PATH\` path, failed clone the repo or the \$ADO_REPO_DEFAULT_PATH not correct?\n"$PALETTE_RESET
