@@ -7,7 +7,11 @@ Script to create GitHub Codespace out of any Azure DevOps repo.
 ### Use
 
 1. Create a Codespace from this repo.
+
 2. Get a PAT in ADO ([link](https://devdiv.visualstudio.com/_usersSettings/tokens)), at least `code:read&write` and `packaging:read` scopes expected on the PAT.
+
+![image](https://user-images.githubusercontent.com/33612256/100295528-ae14ab00-2f3e-11eb-953a-781874c31f6e.png)
+
 3. Add a secret in GitHub Codespaces settings called ADO_PAT, paste the ADO PAT as the value, and select this repo for repository access.
 
 ![image](https://user-images.githubusercontent.com/33612256/100295149-c0421980-2f3d-11eb-979f-2dd3cbf36622.png)
