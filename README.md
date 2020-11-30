@@ -20,6 +20,10 @@ Script to create GitHub Codespace out of any Azure DevOps repo.
 
 ![image](https://user-images.githubusercontent.com/33612256/100568140-2cdf5000-327f-11eb-8e5a-40c8a8fae46a.png)
 
+This script also adds a CEDev directory for you, in which you can add your appsettings.json so that you can run your devstamp in Codespaces-in-Codespaces.
+
+![image](https://user-images.githubusercontent.com/33612256/100641914-f3452e00-32ec-11eb-9521-6b0a89cb6188.png)
+
 ### Issues/Feedback
 
 - Feedback appreciated, create issues on this repo if anything 🤗
