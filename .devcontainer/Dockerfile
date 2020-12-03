@@ -27,6 +27,6 @@ RUN apt-get update \
     && apt-get install -y yarn \
     # dotnet
     && curl -SL $DOTNET_SDK_DOWNLOAD_URL --output dotnet.tar.gz \
-    && mkdir -p /home/codespace/.dotnet \
-    && tar -zxf dotnet.tar.gz -C /home/codespace/.dotnet --skip-old-files \
+    && mkdir -p /usr/local/bin \
+    && tar -zxf dotnet.tar.gz -C /usr/local/bin --skip-old-files \
     && rm dotnet.tar.gz
