@@ -13,7 +13,17 @@ ENV DOTNET_SDK_DOWNLOAD_URL=https://dotnetcli.blob.core.windows.net/dotnet/Sdk/3
     # tooling to use -nowarn:MSB3202 to ignore issues with the .dcproj project
     RestoreUseSkipNonexistentTargets=false
 
-RUN apt-get update && apt-get install -y curl \
+RUN apt-get update \
+    && apt-get install -y curl software-properties-common \
+    # nodejs + tools
+    && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+    && apt-get install -y nodejs \
+    && apt-get install -y gcc g++ make \
+    # yarn
+    && curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+    && apt-get install -y yarn \
+    # dotnet
     && curl -SL $DOTNET_SDK_DOWNLOAD_URL --output dotnet.tar.gz \
     && mkdir -p /home/codespace/.dotnet \
     && tar -zxf dotnet.tar.gz -C /home/codespace/.dotnet --skip-old-files \

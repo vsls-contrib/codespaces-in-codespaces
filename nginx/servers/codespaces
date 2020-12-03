@@ -1,0 +1,40 @@
+log_format cs_log '$remote_addr - $remote_user [$time_local] $status '
+                '"$request" $body_bytes_sent "$http_referer" '
+                '"$http_user_agent" "http_x_forwarded_for"';
+
+
+server {
+  access_log /var/log/nginx/access.log cs_log;
+  client_max_body_size 50M;
+  listen 443 ssl;
+  listen [::]:443 ssl;
+
+  root ./;
+  server_name online.dev.core.vsengsaas.visualstudio.com;
+
+  ssl_certificate ./ssl/cert.pem;
+  ssl_certificate_key ./ssl/key.pem;
+
+  location / {
+    proxy_intercept_errors off;
+    proxy_max_temp_file_size 0;
+    proxy_redirect off;
+    proxy_set_header Host $http_host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-Proto $scheme;
+
+    if (-f $request_filename/index.html) {
+      rewrite (.*) $1/index.html break;
+    }
+
+    if (-f $request_filename.html) {
+      rewrite (.*) $1.html break;
+    }
+
+    if (!-f $request_filename) {
+      proxy_pass "http://host.docker.internal:5000";
+      break;
+    }
+  }
+}
