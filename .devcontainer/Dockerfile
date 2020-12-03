@@ -15,5 +15,6 @@ ENV DOTNET_SDK_DOWNLOAD_URL=https://dotnetcli.blob.core.windows.net/dotnet/Sdk/3
 
 RUN apt-get update && apt-get install -y curl \
     && curl -SL $DOTNET_SDK_DOWNLOAD_URL --output dotnet.tar.gz \
+    && mkdir -p /home/codespace/.dotnet \
     && tar -zxf dotnet.tar.gz -C /home/codespace/.dotnet --skip-old-files \
     && rm dotnet.tar.gz
