@@ -9,7 +9,7 @@ Script to create GitHub Codespace out of DevOps repo.
 *From desktop VSCode:*
 
 1. Create a Codespace using this repo.
-2. Once connected, run `./init` command to start the bootstrap process.
+2. Once connected, run `./init` command to start the bootstrap process, follow instructions.
 3. Once complete, run `code -r .` in the terminal to open the current folder.
 4. Run `yarn start:bare` to start the portal, it will auto-forward the port `5000`.
 5. Download the `nginx` folder from this repo, open it in vscode and run `./start.sh` script.
