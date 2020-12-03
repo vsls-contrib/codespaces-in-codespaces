@@ -1,7 +1,9 @@
 {
 	"$schema": "https://raw.githubusercontent.com/microsoft/vscode/master/extensions/configuration-editing/schemas/devContainer.schema.json",
 	"name": "Codespaces in GitHub Codespaces",
-	"image": "ghcr.io/vsls-contrib/codespaces-in-codespaces:main",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash"
 	},
