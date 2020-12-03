@@ -13,6 +13,6 @@ ENV DOTNET_SDK_DOWNLOAD_URL https://dotnetcli.blob.core.windows.net/dotnet/Sdk/3
     # tooling to use -nowarn:MSB3202 to ignore issues with the .dcproj project
     RestoreUseSkipNonexistentTargets false
 
-RUN sudo curl -SL $DOTNET_SDK_DOWNLOAD_URL --output dotnet.tar.gz \
-    && sudo tar -zxf dotnet.tar.gz -C /home/codespace/.dotnet --skip-old-files \
-    && sudo rm dotnet.tar.gz
+RUN curl -SL $DOTNET_SDK_DOWNLOAD_URL --output dotnet.tar.gz \
+    && tar -zxf dotnet.tar.gz -C /home/codespace/.dotnet --skip-old-files \
+    && rm dotnet.tar.gz
