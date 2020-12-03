@@ -95,7 +95,7 @@ if ! [ -z \$CODESPACE_DEFAULT_PATH ] 2> /dev/null && [ -d \$CODESPACE_DEFAULT_PA
 elif [ \$(basename \"\$0\") != 'init' ]
 then
   clear
-  echo -e \"\$PALETTE_DIM\n💡  Run\$PALETTE_BLUE ./init\$PALETTE_RESET\$PALETTE_DIM when ready.\n\$PALETTE_RESET\"
+  echo -e \"\$PALETTE_CYAN\n💡  Run\$PALETTE_BLUE ./init\$PALETTE_RESET\$PALETTE_CYAN when ready.\n\$PALETTE_RESET\"
 fi
 
 " >> $BASH_RC_FILE
