@@ -12,6 +12,6 @@
 6. Go to `https://github.com/codespaces` and create a repo with `Local` VSCS target.
 7. Done.
 
-### Issues/Feedback
+**Issues/Feedback**
 
 - Feedback appreciated, create issues on this repo if anything 🤗
