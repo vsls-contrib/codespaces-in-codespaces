@@ -1,30 +1,31 @@
 {
 	"$schema": "https://raw.githubusercontent.com/microsoft/vscode/master/extensions/configuration-editing/schemas/devContainer.schema.json",
 	"name": "Codespaces in GitHub Codespaces",
-	"image": "mcr.microsoft.com/dotnet/core/sdk:3.1.200",
+	"image": "ghcr.io/vsls-contrib/codespaces-in-codespaces:main",
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash"
 	},
 	"extensions": [
 		"ms-dotnettools.csharp"
 	],
+	"workspaceFolder": "/home/codespace/workspace/codespaces-in-codespaces/src/Portal/PortalWebsite/Src/Website",
 	"remoteEnv": {
 		// [change] ADO repo URL
 		"ADO_REPO_URL": "https://devdiv.visualstudio.com/OnlineServices/_git/vsclk-core",
 		// [change] relative to the ADO repo root
-		"ADO_REPO_DEFAULT_PATH": "",
+		"ADO_REPO_DEFAULT_PATH": "/src/Portal/PortalWebsite/Src/Website",
 		/*
 		 * [change][optional] absolute path to .npmrc file - /root/workspace/{this-repo-name}/path/from/repo/root/.npmrc
 		 * if the env variable is not set, it will pick up the `.npmrc` file in the repo root, if present
 		 * if file not found with above, then it will pick up the `.npmrc` file in the $ADO_REPO_DEFAULT_PATH, if present
 		 */
-		"NPMRC_CONFIG_FILE_PATH": "",
+		"NPMRC_CONFIG_FILE_PATH": "/home/codespace/workspace/codespaces-in-codespaces/src/Portal/PortalWebsite/Src/Website/.npmrc",
 		/*
 		 * [change][optional] absolute path to NuGet.Config file - /root/workspace/{this-repo-name}/path/from/repo/root/NuGet.Config
 		 * if the env variable is not set, it will pick up the `NuGet.Config` file in the repo root, if present
 		 * if file not found with conditions above, then it will pick up the `NuGet.Config` file in the $ADO_REPO_DEFAULT_PATH, if present
 		 */
-		"NUGET_CONFIG_FILE_PATH": ""
+		"NUGET_CONFIG_FILE_PATH": "/home/codespace/workspace/codespaces-in-codespaces/NuGet.config"
 	},
 	/*
 	 * Please don't change! create your own `post-create-command.sh`
